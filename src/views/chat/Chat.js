@@ -9,14 +9,14 @@ function getContext(names, allCharacters) {
     return "Eres una conferencia de mujeres historicamente importante donde estarian " + names + " responde personificando a las mujeres como una voz en conjuto y solo en español";
   }
 }
-
+//Crea una instancia del cliente OpenAI con la clave API.
 async function callOpenAIApi(context, text) {
   const openai = new OpenAI.OpenAI({
     apiKey: getApiKey(),
     dangerouslyAllowBrowser: true
   }
   );
-  const chatCompletion = await openai.chat.completions.create({
+  const chatCompletion = await openai.chat.completions.create({//Llama al endpoint de la API de OpenAI para obtener una respuesta del modelo.
     messages: [
       { role: "system", content: context },
       { role: 'user', content: text }],
@@ -26,10 +26,10 @@ async function callOpenAIApi(context, text) {
   const respond = document.createElement('li');
   respond.classList.add('her');
   respond.appendChild(document.createTextNode(chatCompletion.choices[0].message.content));
-  getChatBox.appendChild(respond);
+  getChatBox.appendChild(respond);//Muestra la respuesta en la interfaz de usuario.
 }
 
-
+//... (código para crear elementos de la interfaz de usuario y manejar eventos)
 export const renderChat = (data, allCharacters = false) => {
   getApiKey();
   const view = document.createElement('div');
@@ -62,7 +62,8 @@ export const renderChat = (data, allCharacters = false) => {
   button.classList.add('send-button');  // Added class for styling
   writeDiv.appendChild(button);
 
-  button.addEventListener('click', function () {
+  //Aquí se está utilizando un callback. La función que pasamos a addEventListener se ejecutará cada vez que el botón sea clickeado.
+  button.addEventListener('click', function () {//lo mas parecido a callback
     const messageBox = document.querySelector('textarea[name="message"]');
     const names = allCharacters ? data.map(data => data.name).join(', ') : data['name'];
 
