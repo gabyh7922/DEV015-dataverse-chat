@@ -23,7 +23,7 @@ export const getApiKey = () => {
 export const setApiKey = (key) => {
   // Guardar la API KEY en Local Storage
   try {
-    sessionStorage.setItem('apiKey', key);//permite almacenar datos de forma persistente en el navegador.
+    localStorage.setItem('apiKey', key);//permite almacenar datos de forma persistente en el navegador.
   } catch (error) {
     alert('Error al guardar la API KEY:', error);
   }
