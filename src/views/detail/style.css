@@ -16,6 +16,7 @@
     height: 300px;
     width: 450px;
     object-fit: cover;
+    display: flex;
 }
 
 .chat {
@@ -37,7 +38,7 @@
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     justify-content: space-between;
     height: 55vh;
@@ -80,7 +81,7 @@
 
 
 .write {
-    display: flex;
+   /* display: flex;*/
     padding: 10px;
     border-top: 1px solid #ddd;
     background-color: white;

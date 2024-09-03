@@ -35,8 +35,8 @@
    box-sizing: border-box;
    max-width: calc(20% - 60px);
    /* Limitar el ancho máximo de cada tarjeta */
-   display: flex;
-   flex-wrap: wrap;
+   display: flex; /*alineación, dirección y distribución del espacio entre los elementos*/
+   flex-wrap: wrap; /* como se ajusa*/
    list-style-type: none;
    /* Elimina los puntos de la lista */
    padding: 0;
